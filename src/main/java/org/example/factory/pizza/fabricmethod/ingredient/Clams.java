@@ -1,4 +1,4 @@
 package org.example.factory.pizza.fabricmethod.ingredient;
 
-public class Clams {
+public interface Clams {
 }

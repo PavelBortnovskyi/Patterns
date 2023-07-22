@@ -1,4 +1,4 @@
 package org.example.factory.pizza.fabricmethod.ingredient;
 
-public class RedPepper extends Veggies{
+public class RedPepper implements Veggies{
 }
