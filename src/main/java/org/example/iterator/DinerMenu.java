@@ -7,6 +7,9 @@ public class DinerMenu implements Menu{
   int numberOfItems = 0;
   MenuItem[] menuItems;
 
+  final String name = "Diner";
+
+
   public DinerMenu() {
     menuItems = new MenuItem[MAX_ITEMS];
     addItem("Vegetarian BLT",
@@ -35,5 +38,10 @@ public class DinerMenu implements Menu{
   @Override
   public Iterator<MenuItem> createIterator(){
     return new DinerMenuIterator(this.menuItems);
+  }
+
+  @Override
+  public String getName() {
+    return this.name;
   }
 }

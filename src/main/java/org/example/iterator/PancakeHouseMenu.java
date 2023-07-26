@@ -7,6 +7,8 @@ import java.util.List;
 public class PancakeHouseMenu implements Menu{
   List<MenuItem> menuItems;
 
+  final String name = "Breakfast";
+
   public PancakeHouseMenu() {
     this.menuItems = new ArrayList<MenuItem>();
     addItem("K&B’s Pancake Breakfast",
@@ -37,5 +39,10 @@ public class PancakeHouseMenu implements Menu{
   @Override
   public Iterator<MenuItem> createIterator(){
     return this.menuItems.iterator();
+  }
+
+  @Override
+  public String getName() {
+    return this.name;
   }
 }

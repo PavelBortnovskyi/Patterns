@@ -1,25 +1,24 @@
 package org.example.iterator;
 
+import java.util.ArrayList;
 import java.util.Iterator;
+import java.util.List;
 
 public class Waitress {
-  Menu pancakeHouseMenu;
-  Menu dinerMenu;
+  List<Menu> menus;
 
 
-  public Waitress(Menu pancakeHouseMenu, Menu dinerMenu) {
-    this.pancakeHouseMenu = pancakeHouseMenu;
-    this.dinerMenu = dinerMenu;
+  public Waitress(ArrayList<Menu> menus) {
+    this.menus = menus;
   }
 
   public void printMenu() {
-    java.util.Iterator<MenuItem> pancakeIterator = this.pancakeHouseMenu.createIterator();
-    java.util.Iterator<MenuItem> dinerIterator = this.dinerMenu.createIterator();
-
-    System.out.println("MENU\n----\nBREAKFAST");
-    printMenu(pancakeIterator);
-    System.out.println("\nLUNCH");
-    printMenu(dinerIterator);
+   Iterator<Menu> menuIterator = this.menus.iterator();
+   while (menuIterator.hasNext()){
+     Menu menu = menuIterator.next();
+     System.out.println(menu.getName());
+     this.printMenu(menu.createIterator());
+   }
   }
 
   //Перегрузка метода для использования в публичном методе выше
