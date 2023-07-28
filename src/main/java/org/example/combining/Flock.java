@@ -25,7 +25,5 @@ public class Flock implements Quackable {
   }
 
   @Override
-  public void notifyObservers() {
-
-  }
+  public void notifyObservers() {} //Метод пустой для исключения его вызова субколлекциями
 }
